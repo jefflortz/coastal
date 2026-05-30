@@ -3,6 +3,14 @@
 @import './typography.css' layer(components);
 
 @theme {
+  /* CGA Brand Colors */
+  --color-cga-navy: #1B2B4B;
+  --color-cga-gold: #C9A84C;
+  --color-cga-teal: #2A7F7F;
+  --color-cga-sand: #F5F0E8;
+  --color-cga-body: #1A1A1A;
+  --color-cga-light: #6B7280;
+
   --text-*: initial;
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;

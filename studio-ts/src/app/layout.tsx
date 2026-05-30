@@ -4,14 +4,17 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Studio',
-    default: 'Studio - Award winning developer studio based in Denmark',
+    template: '%s - Coastal Growth Advisors',
+    default:
+      'Coastal Growth Advisors — Business Advisory & Executive Coaching, Plymouth MA',
   },
+  description:
+    'Business advisory and executive coaching for privately held, owner-operated businesses in Southeastern Massachusetts. The operating partner your business has been missing.',
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
+    <html lang="en" className="h-full bg-cga-navy text-base antialiased">
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   )

@@ -18,8 +18,6 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
-import { Offices } from '@/components/Offices'
-import { SocialMedia } from '@/components/SocialMedia'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -82,7 +80,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href="/contact" invert={invert}>
-            Contact us
+            Free Consultation
           </Button>
           <button
             ref={toggleRef}
@@ -143,12 +141,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/services">Services</NavigationItem>
+        <NavigationItem href="/about">About Jeff</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="/#who-we-serve">Who We Serve</NavigationItem>
+        <NavigationItem href="/articles">Articles</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -239,18 +237,23 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                 <div className="grid grid-cols-1 gap-y-10 pt-10 pb-16 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                      Coastal Growth Advisors
                     </h2>
-                    <Offices
-                      invert
-                      className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2"
-                    />
+                    <p className="mt-4 text-sm text-neutral-400">
+                      Plymouth, MA<br />
+                      Serving the South Shore, South Coast &amp; Cape Cod
+                    </p>
                   </div>
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
+                  <div className="sm:border-l sm:border-neutral-800 sm:pl-16">
                     <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
+                      Get in touch
                     </h2>
-                    <SocialMedia className="mt-6" invert />
+                    <p className="mt-4 text-sm text-neutral-400">
+                      The first conversation is free.
+                    </p>
+                    <Button href="/contact" invert className="mt-6">
+                      Schedule a Free Consultation
+                    </Button>
                   </div>
                 </div>
               </Container>
