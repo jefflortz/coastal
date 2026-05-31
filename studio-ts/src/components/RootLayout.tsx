@@ -60,7 +60,7 @@ function Header({
 
   return (
     <Container>
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between py-4">
         <Link
           href="/"
           aria-label="Home"
@@ -68,12 +68,12 @@ function Header({
           onMouseLeave={() => setLogoHovered(false)}
         >
           <Logomark
-            className="h-8 sm:hidden"
+            className="sm:hidden"
             invert={invert}
             filled={logoHovered}
           />
           <Logo
-            className="hidden h-8 sm:block"
+            className="hidden sm:block"
             invert={invert}
             filled={logoHovered}
           />
@@ -187,7 +187,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
     >
       <header>
         <div
-          className="absolute top-2 right-0 left-0 z-40 pt-14"
+          className="absolute top-0 right-0 left-0 z-40 pt-6"
           aria-hidden={expanded ? 'true' : undefined}
           inert={expanded ? true : undefined}
         >
@@ -265,7 +265,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
       <motion.div
         layout
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
-        className="relative flex flex-auto overflow-hidden bg-white pt-14"
+        className="relative flex flex-auto overflow-hidden bg-white pt-24"
       >
         <motion.div
           layout

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import clsx from 'clsx'
 
 export function Logomark({
@@ -9,17 +10,15 @@ export function Logomark({
   filled?: boolean
 }) {
   return (
-    <div
-      {...props}
-      className={clsx(
-        'flex h-8 w-8 items-center justify-center rounded font-bold text-sm',
-        invert
-          ? 'bg-white text-cga-navy'
-          : 'bg-cga-navy text-white',
-        props.className,
-      )}
-    >
-      CGA
+    <div className={clsx('h-8 w-8', props.className)}>
+      <Image
+        src={invert ? '/logo-dark-cropped.png' : '/logo-light-cropped.png'}
+        alt="Coastal Growth Advisors"
+        width={200}
+        height={50}
+        className="h-8 w-auto"
+        unoptimized
+      />
     </div>
   )
 }
@@ -36,26 +35,15 @@ export function Logo({
   fillOnHover?: boolean
 }) {
   return (
-    <div
-      className={clsx('flex flex-col leading-none', className)}
-      {...props}
-    >
-      <span
-        className={clsx(
-          'font-display text-base font-bold tracking-tight',
-          invert ? 'text-white' : 'text-cga-navy',
-        )}
-      >
-        Coastal Growth Advisors
-      </span>
-      <span
-        className={clsx(
-          'mt-0.5 text-xs font-normal tracking-wide',
-          invert ? 'text-white/60' : 'text-cga-light',
-        )}
-      >
-        Plymouth, MA &middot; Southeastern Massachusetts
-      </span>
+    <div className={clsx('flex items-center', className)} {...props}>
+      <Image
+        src={invert ? '/logo-dark-cropped.png' : '/logo-light-cropped.png'}
+        alt="Coastal Growth Advisors"
+        width={400}
+        height={100}
+        className="h-12 w-auto"
+        unoptimized
+      />
     </div>
   )
 }

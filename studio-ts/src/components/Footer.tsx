@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
@@ -31,10 +32,15 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
             {/* Brand */}
             <div>
-              <p className="font-display text-base font-bold tracking-tight text-white">
-                Coastal Growth Advisors
-              </p>
-              <p className="mt-1 text-xs text-white/50">
+              <Image
+                src="/logo-dark-cropped.png"
+                alt="Coastal Growth Advisors"
+                width={180}
+                height={45}
+                className="h-10 w-auto"
+                unoptimized
+              />
+              <p className="mt-3 text-xs text-white/50">
                 A DBA of Agile Operators, LLC
               </p>
               <p className="mt-4 text-sm text-white/70 leading-relaxed">

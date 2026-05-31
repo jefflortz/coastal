@@ -401,13 +401,13 @@ export default function Home() {
   return (
     <RootLayout>
       {/* Hero */}
-      <Container className="mt-24 sm:mt-32 md:mt-56">
+      <Container className="py-16 sm:py-24 md:py-32">
         <FadeIn className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-widest text-cga-gold">
             Business Advisory &amp; Executive Coaching &middot; Southeastern Massachusetts
           </p>
           <h1 className="mt-6 font-display text-5xl font-extrabold tracking-tight text-balance text-cga-navy sm:text-7xl">
-            What if your business ran as well as you do — on your best day?
+            The Operating Partner Your Business Has Been Missing.
           </h1>
           <p className="mt-6 text-xl text-cga-body leading-relaxed">
             Most businesses are run by capable people operating without the
@@ -428,9 +428,6 @@ export default function Home() {
               See How We Work <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
-          <p className="mt-8 text-sm italic text-cga-light">
-            The Operating Partner Your Business Has Been Missing.
-          </p>
         </FadeIn>
       </Container>
 
