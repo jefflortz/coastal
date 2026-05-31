@@ -198,34 +198,58 @@ function WhoWeServe() {
   return (
     <div id="who-we-serve" className="bg-white py-24 sm:py-32">
       <Container>
-        <FadeIn>
-          <p className="text-xs font-semibold uppercase tracking-widest text-cga-gold">
-            Who We Serve
-          </p>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-cga-navy sm:text-5xl">
-            Built for the business that&rsquo;s outgrown the original model.
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg text-cga-body leading-relaxed">
-            Privately held, owner-operated, and founder-led businesses generating
-            $5M–$50M in revenue across Southeastern Massachusetts. Established
-            companies with real complexity — not startups, not lifestyle
-            businesses. If any of these sound familiar, we should talk.
-          </p>
-        </FadeIn>
-        <FadeInStagger className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {signals.map((signal) => (
-            <FadeIn key={signal.title}>
-              <div className="rounded-2xl border border-cga-navy/10 bg-cga-sand p-6">
-                <h3 className="font-display text-lg font-bold text-cga-navy">
-                  {signal.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-cga-body">
-                  {signal.body}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-        </FadeInStagger>
+        <div className="lg:flex lg:items-start lg:gap-x-16">
+
+          {/* Left — intro + CTA */}
+          <FadeIn className="lg:w-2/5 lg:sticky lg:top-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-cga-gold">
+              Who We Serve
+            </p>
+            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-cga-navy sm:text-5xl">
+              Built for the business that&rsquo;s outgrown the original model.
+            </h2>
+            <p className="mt-6 text-lg text-cga-body leading-relaxed">
+              Privately held, owner-operated, and founder-led businesses
+              generating $5M–$50M in revenue across Southeastern Massachusetts.
+              Established companies with real complexity — not startups, not
+              lifestyle businesses.
+            </p>
+            <p className="mt-4 text-lg font-semibold text-cga-navy">
+              If any of these sound familiar, we should talk.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex rounded-full bg-cga-navy px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-cga-navy/90"
+              >
+                Schedule a Free Consultation
+              </Link>
+              <Link
+                href="/clients"
+                className="inline-flex rounded-full border border-cga-navy/20 px-6 py-2.5 text-sm font-semibold text-cga-navy transition hover:border-cga-teal hover:text-cga-teal"
+              >
+                See client profiles &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+
+          {/* Right — signal list */}
+          <FadeInStagger className="mt-12 lg:mt-0 lg:w-3/5">
+            {signals.map((signal) => (
+              <FadeIn key={signal.title}>
+                <div className="border-t border-cga-navy/10 py-8 first:border-t-0">
+                  <h3 className="font-display text-lg font-bold text-cga-navy">
+                    {signal.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-cga-body">
+                    {signal.body}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </FadeInStagger>
+
+        </div>
       </Container>
     </div>
   )

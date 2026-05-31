@@ -36,7 +36,7 @@ function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M2 6h20v2H2zM2 16h20v2H2z" />
+      <path d="M2 5h20v2H2zM2 11h20v2H2zM2 17h20v2H2z" />
     </svg>
   )
 }
@@ -60,7 +60,8 @@ function Header({
 
   return (
     <Container>
-      <div className="flex items-start justify-between py-4">
+      <div className="grid grid-cols-3 items-center py-4">
+        {/* Left — logo */}
         <Link
           href="/"
           aria-label="Home"
@@ -78,10 +79,9 @@ function Header({
             filled={logoHovered}
           />
         </Link>
-        <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
-            Free Consultation
-          </Button>
+
+        {/* Center — hamburger */}
+        <div className="flex justify-center">
           <button
             ref={toggleRef}
             type="button"
@@ -103,6 +103,13 @@ function Header({
               )}
             />
           </button>
+        </div>
+
+        {/* Right — CTA button */}
+        <div className="flex justify-end">
+          <Button href="/contact" invert={invert}>
+            Free Consultation
+          </Button>
         </div>
       </div>
     </Container>
@@ -145,7 +152,7 @@ function Navigation() {
         <NavigationItem href="/about">About Jeff</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/#who-we-serve">Who We Serve</NavigationItem>
+        <NavigationItem href="/clients">Who We Serve</NavigationItem>
         <NavigationItem href="/articles">Articles</NavigationItem>
       </NavigationRow>
     </nav>

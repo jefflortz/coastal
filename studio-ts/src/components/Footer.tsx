@@ -17,7 +17,7 @@ const navigation = [
     title: 'Company',
     links: [
       { title: 'About Jeff', href: '/about' },
-      { title: 'Who We Serve', href: '/#who-we-serve' },
+      { title: 'Who We Serve', href: '/clients' },
       { title: 'Articles', href: '/articles' },
       { title: 'Contact', href: '/contact' },
     ],
