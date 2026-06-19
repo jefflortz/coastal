@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import clsx from 'clsx'
 
 import { Blockquote } from '@/components/Blockquote'
@@ -15,8 +16,10 @@ export const MDXComponents = {
   },
   img: function Img({
     className,
+    src,
+    alt,
     ...props
-  }: React.ComponentPropsWithoutRef<typeof GrayscaleTransitionImage>) {
+  }: React.ComponentPropsWithoutRef<'img'>) {
     return (
       <div
         className={clsx(
@@ -24,11 +27,15 @@ export const MDXComponents = {
           className,
         )}
       >
-        <GrayscaleTransitionImage
-          {...props}
-          sizes="(min-width: 768px) 42rem, 100vw"
-          className="aspect-16/10 w-full object-cover"
-        />
+        <div className="relative aspect-[16/10] w-full">
+          <Image
+            src={src as string}
+            alt={alt ?? ''}
+            fill
+            sizes="(min-width: 768px) 42rem, 100vw"
+            className="object-cover grayscale transition duration-500 hover:grayscale-0"
+          />
+        </div>
       </div>
     )
   },

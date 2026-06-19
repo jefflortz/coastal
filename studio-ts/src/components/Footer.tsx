@@ -76,12 +76,22 @@ export function Footer() {
           </div>
 
           <div className="mt-16 flex flex-wrap items-center justify-between gap-x-6 gap-y-4 border-t border-white/10 pt-10">
+            <div className="flex items-center gap-x-4">
+              <Image
+                src="/logo-icon-dark.png"
+                alt="Coastal Growth Advisors"
+                width={48}
+                height={32}
+                className="h-8 w-auto opacity-60"
+                unoptimized
+              />
+              <p className="text-sm text-white/40">
+                &copy; {new Date().getFullYear()} Agile Operators, LLC. All rights reserved.
+              </p>
+            </div>
             <Link href="/contact" className="inline-flex items-center rounded-full bg-cga-teal px-5 py-2 text-sm font-semibold text-white transition hover:bg-cga-teal/90">
               Schedule a Free Consultation
             </Link>
-            <p className="text-sm text-white/40">
-              &copy; {new Date().getFullYear()} Agile Operators, LLC. All rights reserved.
-            </p>
           </div>
         </Container>
       </FadeIn>

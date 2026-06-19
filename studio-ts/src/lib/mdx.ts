@@ -31,6 +31,8 @@ export interface Article {
   date: string
   title: string
   description: string
+  category?: string
+  featuredImage?: string
   author: {
     name: string
     role: string
@@ -72,7 +74,7 @@ export interface Service {
 }
 
 export function loadArticles() {
-  return loadEntries<Article>('blog', 'article')
+  return loadEntries<Article>('articles', 'article')
 }
 
 export function loadCaseStudies() {

@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   },
   description:
     'Business advisory and executive coaching for privately held, owner-operated businesses in Southeastern Massachusetts. The operating partner your business has been missing.',
+  icons: {
+    icon: '/favicon-512.png',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

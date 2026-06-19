@@ -14,6 +14,14 @@ import { unifiedConditional } from 'unified-conditional'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
 }
 
 function remarkMDXLayout(source, metaName) {
@@ -67,8 +75,8 @@ export default async function config() {
         [
           unifiedConditional,
           [
-            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/blog'))}`),
-            [[remarkMDXLayout, '@/app/blog/wrapper', 'article']],
+            new RegExp(`^${escapeStringRegexp(path.resolve('src/app/articles'))}`),
+            [[remarkMDXLayout, '@/app/articles/wrapper', 'article']],
           ],
           [
             new RegExp(`^${escapeStringRegexp(path.resolve('src/app/work'))}`),

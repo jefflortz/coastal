@@ -1,10 +1,8 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
-import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
@@ -13,20 +11,47 @@ import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Articles',
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
+    "Practical thinking for owner-led business operators in Southeastern Massachusetts — from someone who's actually been in the seat.",
 }
 
-export default async function Blog() {
-  let articles = await loadArticles()
+function ArticlesCTA() {
+  return (
+    <div className="bg-cga-teal mt-24 sm:mt-32 lg:mt-40 py-24 sm:py-32">
+      <Container>
+        <FadeIn className="text-center">
+          <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Something resonate?
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80 leading-relaxed">
+            The first conversation is free. Bring what&rsquo;s on your mind — we&rsquo;ll
+            tell you honestly whether we can help.
+          </p>
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-flex rounded-full bg-white px-8 py-3 text-base font-semibold text-cga-teal shadow transition hover:bg-cga-sand"
+            >
+              Schedule a Free Consultation
+            </Link>
+          </div>
+        </FadeIn>
+      </Container>
+    </div>
+  )
+}
+
+export default async function Articles() {
+  const articles = await loadArticles()
 
   return (
     <RootLayout>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
+      <PageIntro eyebrow="From the Field" title="Practical thinking for business operators.">
         <p>
-          Stay up-to-date with the latest industry news as our marketing teams
-          finds new ways to re-purpose old CSS tricks articles.
+          Not theory. Not frameworks for their own sake. Writing from someone who
+          has run businesses, made the hard calls, and now works with owners
+          navigating the same challenges across Southeastern Massachusetts.
         </p>
       </PageIntro>
 
@@ -49,19 +74,13 @@ export default async function Blog() {
                           </time>
                         </dd>
                         <dt className="sr-only">Author</dt>
-                        <dd className="mt-6 flex gap-x-4">
-                          <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
-                            <Image
-                              alt=""
-                              {...article.author.image}
-                              className="h-12 w-12 object-cover grayscale"
-                            />
+                        <dd className="mt-6 flex items-center gap-x-3">
+                          <div className="flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-xl bg-cga-navy">
+                            <span className="text-xs font-bold text-white">JL</span>
                           </div>
                           <div className="text-sm text-neutral-950">
-                            <div className="font-semibold">
-                              {article.author.name}
-                            </div>
-                            <div>{article.author.role}</div>
+                            <div className="font-semibold">Jeff Lortz</div>
+                            <div className="text-neutral-600">Founder, Coastal Growth Advisors</div>
                           </div>
                         </dd>
                       </dl>
@@ -84,7 +103,7 @@ export default async function Blog() {
         </div>
       </Container>
 
-      <ContactSection />
+      <ArticlesCTA />
     </RootLayout>
   )
 }

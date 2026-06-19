@@ -454,7 +454,7 @@ function RecentArticles({ articles }: { articles: Array<MDXEntry<Article>> }) {
         </FadeInStagger>
         <FadeIn className="mt-10">
           <Link
-            href="/blog"
+            href="/articles"
             className="text-sm font-semibold text-cga-navy hover:text-cga-teal"
           >
             View all articles &rarr;

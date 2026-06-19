@@ -10,13 +10,13 @@ export function Logomark({
   filled?: boolean
 }) {
   return (
-    <div className={clsx('h-8 w-8', props.className)}>
+    <div className={clsx('flex items-center', props.className)}>
       <Image
-        src={invert ? '/logo-dark-cropped.png' : '/logo-light-cropped.png'}
+        src="/logo-icon-dark.png"
         alt="Coastal Growth Advisors"
-        width={200}
-        height={50}
-        className="h-8 w-auto"
+        width={120}
+        height={80}
+        className="h-10 w-auto"
         unoptimized
       />
     </div>

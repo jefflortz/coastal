@@ -1,95 +1,36 @@
-import { useId } from 'react'
 import { type Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 
 import { Border } from '@/components/Border'
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
-import { SocialMedia } from '@/components/SocialMedia'
 import { RootLayout } from '@/components/RootLayout'
-
-function TextInput({
-  label,
-  ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  let id = useId()
-
-  return (
-    <div className="group relative z-0 transition-all focus-within:z-10">
-      <input
-        type="text"
-        id={id}
-        {...props}
-        placeholder=" "
-        className="peer block w-full border border-neutral-300 bg-transparent px-6 pt-12 pb-4 text-base/6 text-neutral-950 ring-4 ring-transparent transition group-first:rounded-t-2xl group-last:rounded-b-2xl focus:border-neutral-950 focus:ring-neutral-950/5 focus:outline-hidden"
-      />
-      <label
-        htmlFor={id}
-        className="pointer-events-none absolute top-1/2 left-6 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-not-placeholder-shown:-translate-y-4 peer-not-placeholder-shown:scale-75 peer-not-placeholder-shown:font-semibold peer-not-placeholder-shown:text-neutral-950 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950"
-      >
-        {label}
-      </label>
-    </div>
-  )
-}
-
-function RadioInput({
-  label,
-  ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  return (
-    <label className="flex gap-x-3">
-      <input
-        type="radio"
-        {...props}
-        className="h-6 w-6 flex-none appearance-none rounded-full border border-neutral-950/20 outline-hidden checked:border-[0.5rem] checked:border-neutral-950 focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
-      />
-      <span className="text-base/6 text-neutral-950">{label}</span>
-    </label>
-  )
-}
 
 function ContactForm() {
   return (
     <FadeIn className="lg:order-last">
-      <form>
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Work inquiries
-        </h2>
-        <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
-          <TextInput
-            label="Email"
-            type="email"
-            name="email"
-            autoComplete="email"
-          />
-          <TextInput
-            label="Company"
-            name="company"
-            autoComplete="organization"
-          />
-          <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Message" name="message" />
-          <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
-            <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
-              <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="$25K – $50K" name="budget" value="25" />
-                <RadioInput label="$50K – $100K" name="budget" value="50" />
-                <RadioInput label="$100K – $150K" name="budget" value="100" />
-                <RadioInput label="More than $150K" name="budget" value="150" />
-              </div>
-            </fieldset>
-          </div>
-        </div>
-        <Button type="submit" className="mt-10">
-          Let’s work together
-        </Button>
-      </form>
+      <p className="text-xs font-semibold uppercase tracking-widest text-cga-gold">
+        Schedule a Free Consultation
+      </p>
+      <div className="mt-6">
+        <Script
+          src="https://js.hsforms.net/forms/embed/46259123.js"
+          strategy="afterInteractive"
+          defer
+        />
+        <div
+          className="hs-form-frame"
+          data-region="na1"
+          data-form-id="b7e9d6a7-45c2-496c-9a4f-45ac32630091"
+          data-portal-id="46259123"
+        />
+      </div>
+      <p className="mt-4 text-sm text-cga-light">
+        No commitment. No pitch deck. Just a conversation with someone
+        who&rsquo;s been in the seat.
+      </p>
     </FadeIn>
   )
 }
@@ -97,60 +38,59 @@ function ContactForm() {
 function ContactDetails() {
   return (
     <FadeIn>
-      <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our offices
+      <h2 className="font-display text-base font-bold text-cga-navy">
+        Based in Plymouth, MA
       </h2>
-      <p className="mt-6 text-base text-neutral-600">
-        Prefer doing things in person? We don’t but we have to list our
-        addresses here for legal reasons.
+      <p className="mt-6 text-base text-cga-body leading-relaxed">
+        Coastal Growth Advisors works with businesses across the South Shore,
+        South Coast, and Cape Cod. Engagements are structured around your
+        calendar — in person where it makes sense, remote where it doesn&rsquo;t.
       </p>
 
-      <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
+      <div className="mt-10 rounded-2xl bg-cga-sand p-6">
+        <p className="font-semibold text-cga-navy">Plymouth, MA 02360</p>
+        <p className="mt-1 text-sm text-cga-light">
+          Serving Southeastern Massachusetts
+        </p>
+      </div>
 
       <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Email us
+        <h2 className="font-display text-base font-bold text-cga-navy">
+          Email us directly
         </h2>
-        <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-          {[
-            ['Careers', 'careers@studioagency.com'],
-            ['Press', 'press@studioagency.com'],
-          ].map(([label, email]) => (
-            <div key={email}>
-              <dt className="font-semibold text-neutral-950">{label}</dt>
-              <dd>
-                <Link
-                  href={`mailto:${email}`}
-                  className="text-neutral-600 hover:text-neutral-950"
-                >
-                  {email}
-                </Link>
-              </dd>
-            </div>
-          ))}
+        <dl className="mt-6 text-sm">
+          <div>
+            <dt className="font-semibold text-cga-navy">Jeff Lortz</dt>
+            <dd>
+              <Link
+                href="mailto:jeff@coastalgrowthadvisor.com"
+                className="text-cga-teal hover:text-cga-teal/80"
+              >
+                jeff@coastalgrowthadvisor.com
+              </Link>
+            </dd>
+          </div>
         </dl>
-      </Border>
-
-      <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
-        </h2>
-        <SocialMedia className="mt-6" />
       </Border>
     </FadeIn>
   )
 }
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
+  title: "Let's Talk",
+  description:
+    'Schedule a free 60-minute consultation with Jeff Lortz — business advisor and executive coach serving owner-led businesses across Southeastern Massachusetts.',
 }
 
 export default function Contact() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
-        <p>We can’t wait to hear from you.</p>
+      <PageIntro eyebrow="Contact" title="Let’s talk about your business.">
+        <p>
+          The first conversation is free — and it’s a real conversation, not a
+          sales call. Bring your biggest challenge. We’ll tell you honestly
+          whether we can help.
+        </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
