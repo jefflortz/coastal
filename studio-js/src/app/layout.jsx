@@ -1,4 +1,5 @@
 import '@/styles/tailwind.css'
+import { Analytics } from './Analytics'
 
 export const metadata = {
   title: {
@@ -11,15 +12,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSTESBF5Y9"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-BSTESBF5Y9');`,
-          }}
-        />
+        <Analytics />
       </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
