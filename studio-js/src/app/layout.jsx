@@ -1,5 +1,4 @@
 import '@/styles/tailwind.css'
-import Script from 'next/script'
 
 export const metadata = {
   title: {
@@ -12,13 +11,8 @@ export default function Layout({ children }) {
   return (
     <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
       <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-BSTESBF5Y9"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="ga-init"
-          strategy="afterInteractive"
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSTESBF5Y9"></script>
+        <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
