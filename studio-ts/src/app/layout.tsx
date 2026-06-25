@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 
 import '@/styles/tailwind.css'
+import { Analytics } from './Analytics'
 
 export const metadata: Metadata = {
   title: {
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full bg-cga-navy text-base antialiased">
+      <head>
+        <Analytics />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   )
