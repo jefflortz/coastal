@@ -1,23 +1,24 @@
 import '@/styles/tailwind.css'
+import Script from 'next/script'
 
 export const metadata = {
   title: {
     template: '%s - Studio',
     default: 'Studio - Award winning developer studio based in Denmark',
   },
-  scripts: [
-    {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-BSTESBF5Y9',
-      async: true,
-    },
-  ],
 }
 
 export default function Layout({ children }) {
   return (
     <html lang="en" className="h-full bg-neutral-950 text-base antialiased">
       <head>
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BSTESBF5Y9"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
