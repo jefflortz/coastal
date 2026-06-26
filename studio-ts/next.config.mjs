@@ -22,6 +22,21 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.coastalgrowthadvisor.com',
+          },
+        ],
+        destination: 'https://coastalgrowthadvisor.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 function remarkMDXLayout(source, metaName) {
