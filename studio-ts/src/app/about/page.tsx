@@ -1,15 +1,23 @@
 import { type Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { RootLayout } from '@/components/RootLayout'
 import { type MDXEntry, type Article, loadArticles } from '@/lib/mdx'
+import { getWebPageSchema } from '../schema'
 
 export const metadata: Metadata = {
   title: 'About Jeff Lortz',
   description:
-    'Jeff Lortz: former PE-backed SaaS CEO and US Navy Surface Warfare Officer. Plymouth-based operating partner for Southeastern Massachusetts business owners.',
+    'Meet Jeff Lortz: former PE-backed SaaS CEO with 25+ years operating experience and US Navy Surface Warfare Officer background. Your operating partner for Southeastern Massachusetts business growth.',
+  openGraph: {
+    title: 'About Jeff Lortz - Coastal Growth Advisors',
+    description:
+      'Learn about Jeff Lortz, founder of Coastal Growth Advisors. Ex-PE CEO with deep operating experience helping owner-led businesses scale.',
+    type: 'website',
+  },
 }
 
 // ─── Section 1: Hero ─────────────────────────────────────────────────────────

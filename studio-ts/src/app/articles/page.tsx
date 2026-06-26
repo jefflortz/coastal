@@ -11,9 +11,15 @@ import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: 'Articles & Insights',
   description:
-    "Practical thinking for owner-led business operators in Southeastern Massachusetts — from someone who's actually been in the seat.",
+    "Expert insights and practical thinking for owner-led business operators in Southeastern Massachusetts. Real advice from someone who's been in the CEO seat.",
+  openGraph: {
+    title: 'Business Insights & Articles - Coastal Growth Advisors',
+    description:
+      'Practical advice for owner-operated businesses from Jeff Lortz, a former PE-backed CEO with 25+ years of experience.',
+    type: 'website',
+  },
 }
 
 function ArticlesCTA() {

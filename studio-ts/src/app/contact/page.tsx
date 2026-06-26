@@ -79,7 +79,13 @@ function ContactDetails() {
 export const metadata: Metadata = {
   title: "Let's Talk",
   description:
-    'Schedule a free 60-minute consultation with Jeff Lortz — business advisor and executive coach serving owner-led businesses across Southeastern Massachusetts.',
+    'Schedule your free 60-minute consultation with Jeff Lortz. Honest advice for owner-led businesses in Southeastern Massachusetts. It\'s a real conversation, not a sales call.',
+  openGraph: {
+    title: 'Free Consultation - Coastal Growth Advisors',
+    description:
+      'Ready to discuss your biggest business challenge? Schedule a free consultation with an ex-PE CEO.',
+    type: 'website',
+  },
 }
 
 export default function Contact() {

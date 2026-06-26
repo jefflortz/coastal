@@ -14,7 +14,13 @@ import imageLaptop from '@/images/laptop.jpg'
 export const metadata: Metadata = {
   title: 'Our Services',
   description:
-    'Three ways Coastal Growth Advisors works with owner-led businesses in Southeastern Massachusetts — performance planning, executive coaching, and revenue growth advisory.',
+    'Coastal Growth Advisors offers three core services for owner-led businesses: performance planning, executive coaching, and revenue growth advisory. Tailored for $5M-$50M revenue companies.',
+  openGraph: {
+    title: 'Business Advisory Services - Coastal Growth Advisors',
+    description:
+      'Performance planning, executive coaching, and revenue growth advisory for Southeastern Massachusetts business owners.',
+    type: 'website',
+  },
 }
 
 function Section({

@@ -140,7 +140,13 @@ function Clients() {
 export const metadata: Metadata = {
   title: 'Our Work',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    'See how Coastal Growth Advisors has helped owner-led businesses in Southeastern Massachusetts achieve performance improvements, executive transitions, and sustainable revenue growth.',
+  openGraph: {
+    title: 'Case Studies & Results - Coastal Growth Advisors',
+    description:
+      'Real results from real businesses. See how our advisory services drive measurable outcomes.',
+    type: 'website',
+  },
 }
 
 export default async function Work() {
